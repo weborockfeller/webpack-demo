@@ -1,48 +1,22 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+    entry: {
+        app: './src/index.js',
+        print: './src/print.js'
     },
-    module: {
-        rules: [
-            // css 处理
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
-            // 图片处理
-            {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    'file-loader'
-                ]
-            },
-            // 字体处理
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader'
-                ]
-            },
-            // json内置支持 CSV、TSV 和 XML 文件处理
-            {
-                test: /\.(csv|tsv)$/,
-                use: [
-                    'csv-loader'
-                ]
-            },
-            {
-                test: /\.xml$/,
-                use: [
-                    'xml-loader'
-                ]
-            }
-        ]
+    plugins: [
+        // 自动清除dist文件夹
+        new CleanWebpackPlugin(),
+        // HtmlWebpackPlugin 创建了一个全新的文件，所有的 bundle 会自动添加到 html 中
+        new HtmlWebpackPlugin({
+            title: 'Output Management'
+        })
+    ],
+    output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist')
     }
 };
