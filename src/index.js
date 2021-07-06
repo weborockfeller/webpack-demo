@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import printMe from './print';
+import ErrorBoundary from '../component/ErrorBoundary.tsx'
 
 function component() {
     const element = document.createElement('div');
@@ -9,10 +10,12 @@ function component() {
 
     btn.innerHTML = 'Click me and check the console!';
     btn.onclick = printMe;
-    
+
     element.appendChild(btn);
 
     return element;
 }
-  
 document.body.appendChild(component());
+document.body.appendChild(ErrorBoundary);
+
+// document.body.insertBefore(ErrorBoundary, component());

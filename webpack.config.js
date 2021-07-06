@@ -18,7 +18,7 @@ module.exports = {
     devtool: 'inline-source-map',
     // Change your configuration file to tell the dev server where to look for files
     devServer: {
-        contentBase: './dist',
+        contentBase: './dist'
     },
     plugins: [
         // 自动清除dist文件夹
@@ -28,11 +28,20 @@ module.exports = {
             title: 'Development'
         })
     ],
+    module: {
+        rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node-modules/,
+                loader: 'ts-loader'
+            }
+        ]
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         // 自动清除dist文件夹
         clean: true,
-        publicPath: '/',
+        publicPath: '/'
     }
 };

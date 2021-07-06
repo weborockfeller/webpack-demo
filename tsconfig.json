@@ -1,0 +1,54 @@
+{
+    "compilerOptions": {
+        // 不报告执行不到的代码错误。
+        "allowUnreachableCode": true,
+        // 必须标注为null类型,才可以赋值为null
+        "strictNullChecks": true,
+        // 严格模式, 强烈建议开启
+        "strict": true,
+        // 支持别名导入:
+        // import * as React from "react"
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "paths": {
+            "*": ["types/*"]
+        },
+        // 目标js的版本
+        "target": "es5",
+        // 目标代码的模块结构版本
+        "module": "commonjs",
+        // 在表达式和声明上有隐含的 any类型时报错。
+        "noImplicitAny": true,
+        // 删除注释
+        "removeComments": true,
+        // 保留 const和 enum声明
+        "preserveConstEnums": false,
+        // 此处设置为node,才能解析import xx from 'xx'
+        "moduleResolution": "node", 
+        // 生成sourceMap    
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": true, // 为 false 时，如果编译器无法根据变量的使用来判断类型时，将用 any 类型代替。为 true 时，进行强类型检查，会报错
+        "suppressImplicitAnyIndexErrors": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react",
+        // 编译过程中需要引入的库文件的列表
+        "lib": ["dom", "es2015"],
+        // 目标文件所在路径
+        "outDir": "./dist/",
+        // 额外支持解构/forof等功能
+        "downlevelIteration": true,
+        // 是否生成声明文件
+        "declaration": true,
+        // 声明文件路径
+        "declarationDir": "./dist/",
+        "typeRoots": ["./node_modules/@types/", "./src/@types/"]
+    },
+    "compileOnSave": false,
+    "exclude": ["node_modules"]
+}
