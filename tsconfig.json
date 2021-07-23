@@ -1,6 +1,7 @@
 {
     // 尝试commit 插件
     // 再次尝试 commit 插件
+    // 再次尝试
     "compilerOptions": {
         // 不报告执行不到的代码错误。
         "allowUnreachableCode": true,
