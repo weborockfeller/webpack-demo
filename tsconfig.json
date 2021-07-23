@@ -1,4 +1,5 @@
 {
+    // 尝试commit 插件
     "compilerOptions": {
         // 不报告执行不到的代码错误。
         "allowUnreachableCode": true,
