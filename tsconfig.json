@@ -17,8 +17,6 @@
         "target": "es5",
         // 目标代码的模块结构版本
         "module": "commonjs",
-        // 在表达式和声明上有隐含的 any类型时报错。
-        "noImplicitAny": true,
         // 删除注释
         "removeComments": true,
         // 保留 const和 enum声明
@@ -28,9 +26,7 @@
         // 生成sourceMap    
         "sourceMap": true,
         "emitDecoratorMetadata": true,
-        "downlevelIteration": true,
         "experimentalDecorators": true,
-        "removeComments": false,
         "noImplicitAny": true, // 为 false 时，如果编译器无法根据变量的使用来判断类型时，将用 any 类型代替。为 true 时，进行强类型检查，会报错
         "suppressImplicitAnyIndexErrors": true,
         "allowSyntheticDefaultImports": true,
